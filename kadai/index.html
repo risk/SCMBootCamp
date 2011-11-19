@@ -33,6 +33,36 @@
         <td>ブランチを削除</td>
         <td>git branch -d ${ブランチ名}</td>
     </tr>
+    <tr>
+        <td>clone</td>
+        <td>リポジトリの複製（クローン）を作成します。</td>
+        <td>git clone ${複製するリポジトリのURL} ${opt-ローカルのディレクトリ名}</td>
+    </tr>
+    <tr>
+        <td>branch</td>
+        <td>ブランチを削除(未マージのブランチを強制削除)</td>
+        <td>git branch -D ${ブランチ名}</td>
+    </tr>
+    <tr>
+        <td>branch</td>
+        <td>各ブランチにおける直近のコミットを調べる</td>
+        <td>git branch -v</td>
+    </tr>
+    <tr>
+        <td>branch</td>
+        <td>現在のブランチにマージ済みのブランチを調べる</td>
+        <td>git branch --merged</td>
+    </tr>
+    <tr>
+        <td>branch</td>
+        <td>現在のブランチに未マージのブランチを調べる</td>
+        <td>git branch --no-merged</td>
+    </tr>
+    <tr>
+        <td>push</td>
+        <td>指定のリポジトリに自分のリポジトリのデータを送信する。</td>
+        <td>git push ${送信先リポジトリ} ${送信元ブランチ}:${送信先ブランチ}</td>
+    </tr>
 
     <tr>
         <td>reset</td>
@@ -51,7 +81,6 @@
         <td>HEADの位置、インデックス、ワーキングツリーを3つ前の状態に戻す</td>
         <td>git reset --hard HEAD^3</td>
     </tr>
-
 </table>
 
 </body>
