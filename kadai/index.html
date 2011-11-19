@@ -38,6 +38,26 @@
         <td>リポジトリの複製（クローン）を作成します。</td>
         <td>git clone ${複製するリポジトリのURL} ${opt-ローカルのディレクトリ名}</td>
     </tr>
+    <tr>
+        <td>branch</td>
+        <td>ブランチを削除(未マージのブランチを強制削除)</td>
+        <td>git branch -D ${ブランチ名}</td>
+    </tr>
+    <tr>
+        <td>branch</td>
+        <td>各ブランチにおける直近のコミットを調べる</td>
+        <td>git branch -v</td>
+    </tr>
+    <tr>
+        <td>branch</td>
+        <td>現在のブランチにマージ済みのブランチを調べる</td>
+        <td>git branch --merged</td>
+    </tr>
+    <tr>
+        <td>branch</td>
+        <td>現在のブランチに未マージのブランチを調べる</td>
+        <td>git branch --no-merged</td>
+    </tr>
 </table>
 
 </body>
