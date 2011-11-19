@@ -102,6 +102,41 @@
         <td>git commit ${コミットするファイル名}</td>
     </tr>
     <tr>
+        <td>stash</td>
+        <td>ステージされていない変更を一時的に保存する<br/>行うごとに蓄積していく</td>
+        <td>git stash<br/>git stash save ${メッセージ}</td>
+    </tr>
+    <tr>
+        <td>stash list</td>
+        <td>保存したリストを確認する</td>
+        <td>git stash list</td>
+    </tr> 
+    <tr>
+        <td>stash pop</td>
+        <td>一番最近に保存した変更を元に戻す</td>
+        <td>git stash pop</td>
+    </tr>
+
+    <tr>
+        <td>stash drop</td>
+        <td>一番最近に保存した変更を捨てる</td>
+        <td>git stash drop</td>
+    </tr>
+    <tr>
+        <td>stash clear</td>
+        <td>保存した変更をすべて捨てる</td>
+        <td>git stash clear</td>
+    <tr>
+        <td>add</td>
+        <td>任意のファイルをコミット対象として追加する</td>
+        <td>git add ${コミット対象として追加するファイル名}</td>
+    </tr>
+    <tr>
+        <td>add</td>
+        <td>全てのファイルをコミット対象として追加する</td>
+        <td>git add .</td>
+    </tr>
+    <tr>
         <td>git pull</td>
         <td>ほかのリポジトリの変更点をローカルリポジトリにマージする</td>
         <td>git pull ${変更点の取り込み元リポジトリ}</td>
@@ -115,6 +150,11 @@
         <td>checkout</td>
         <td>ブランチを作成して、そのブランチに切り替える</td>
         <td>git checkout -b {ブランチ名}</td>
+    </tr>
+    <tr>
+        <td>git merge</td>
+        <td>現在のブランチに指定したブランチへのコミットをマージする</td>
+        <td>git merge ${ブランチ名}</td>
     </tr>
 </table>
 
