@@ -73,7 +73,16 @@
         <td>指定のリポジトリに自分のリポジトリのデータを送信する。</td>
         <td>git push ${送信先リポジトリ} ${送信元ブランチ}:${送信先ブランチ}</td>
     </tr>
-
+    <tr>
+        <td>rebase</td>
+        <td>ブランチの派生元を変更</td>
+        <td>git rebase ${変更先ブランチ名}</td>
+    </tr>
+    <tr>
+        <td>rebase</td>
+        <td>rebaseを元に戻す</td>
+        <td>git rebase --abort</td>
+    </tr>
     <tr>
         <td>reset</td>
         <td>HEADの位置を1つ前に戻す。インデックスとワーキングツリーには影響は与えない</td>
@@ -165,6 +174,11 @@
         <td>merge</td>
         <td>現在のブランチに指定したブランチへのコミットをマージする</td>
         <td>git merge ${ブランチ名}</td>
+    </tr>
+    <tr>
+        <td>mergetool</td>
+        <td>コンフリクトをマージツールを利用して解決する</td>
+        <td>git mergetool<br/>git mergetool --tool=${ツール名}<br/></td>
     </tr>
     <tr>
         <td>status</td>
@@ -285,6 +299,16 @@
         <td>remote</td>
         <td>リモートリポジトリの詳細情報を表示</td>
         <td>git remote show ${ハンドル名}</td>
+    </tr>
+    <tr>
+        <td>diff</td>
+        <td>作業ディレクトリとステージングの変更点をdiffで表示する</td>
+        <td>git diff ${ファイル名}</td>
+    </tr>
+    <tr>
+        <td>diff</td>
+        <td>作業ディレクトリと特定のコミットの変更点をdiffで表示する</td>
+        <td>git diff ${ハッシュ}</td>
     </tr>
 </table>
 
