@@ -63,19 +63,26 @@
         <td>指定のリポジトリに自分のリポジトリのデータを送信する。</td>
         <td>git push ${送信先リポジトリ} ${送信元ブランチ}:${送信先ブランチ}</td>
     </tr>
-
+    <tr>
+        <td>rebase</td>
+        <td>ブランチの派生元を変更</td>
+        <td>git rebase ${変更先ブランチ名}</td>
+    </tr>
+    <tr>
+        <td>rebase</td>
+        <td>rebaseを元に戻す</td>
+        <td>git rebase --abort</td>
+    </tr>
     <tr>
         <td>reset</td>
         <td>HEADの位置を1つ前に戻す。インデックスとワーキングツリーには影響は与えない</td>
         <td>git reset --soft HEAD^</td>
     </tr>
-
     <tr>
         <td>reset</td>
         <td>HEADの位置、インデックスを2つ前に戻す。ワーキングツリーには影響は与えない</td>
         <td>git reset --mixed HEAD^^</td>
     </tr>
-
     <tr>
         <td>reset</td>
         <td>HEADの位置、インデックス、ワーキングツリーを3つ前の状態に戻す</td>
