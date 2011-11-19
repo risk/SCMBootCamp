@@ -137,7 +137,7 @@
         <td>git add .</td>
     </tr>
     <tr>
-        <td>git pull</td>
+        <td>pull</td>
         <td>ほかのリポジトリの変更点をローカルリポジトリにマージする</td>
         <td>git pull ${変更点の取り込み元リポジトリ}</td>
     </tr>
@@ -152,7 +152,7 @@
         <td>git checkout -b {ブランチ名}</td>
     </tr>
     <tr>
-        <td>git merge</td>
+        <td>merge</td>
         <td>現在のブランチに指定したブランチへのコミットをマージする</td>
         <td>git merge ${ブランチ名}</td>
     </tr>
@@ -250,6 +250,31 @@
         <td>help -w ${command}</td>
         <td>${command}で指定されたコマンドの詳細ヘルプをhtml形式で表示</td>
         <td>htlp -w ${command}</td>
+    </tr>
+    <tr>
+        <td>remote</td>
+        <td>設定済みのリモートリポジトリのハンドル名を表示</td>
+        <td>git remote</td>
+    </tr>
+    <tr>
+        <td>remote</td>
+        <td>設定済みのリモートリポジトリのハンドル名とURLを表示</td>
+        <td>git remote -v</td>
+    </tr>
+    <tr>
+        <td>remote</td>
+        <td>リモートリポジトリを追加</td>
+        <td>git remote add ${ハンドル名} ${URL}</td>
+    </tr>
+    <tr>
+        <td>remote</td>
+        <td>リモートリポジトリを削除</td>
+        <td>git remote rm ${ハンドル名}</td>
+    </tr>
+    <tr>
+        <td>remote</td>
+        <td>リモートリポジトリの詳細情報を表示</td>
+        <td>git remote show ${ハンドル名}</td>
     </tr>
 </table>
 
