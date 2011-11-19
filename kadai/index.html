@@ -308,7 +308,17 @@
     <tr>
         <td>diff</td>
         <td>作業ディレクトリと特定のコミットの変更点をdiffで表示する</td>
-        <td>git diff ${ハッシュ}</td>
+        <td>git diff ${コミットID}</td>
+    </tr>
+    <tr>
+        <td>revert</td>
+        <td>特定のコミットを取り消す（自動的にコミットを行う）</td>
+        <td>git revert ${コミットID}</td>
+    </tr>
+    <tr>
+        <td>revert</td>
+        <td>特定のコミットを取り消す（ステージングには上がるがコミットは行わない）</td>
+        <td>git revert -n ${コミットID}</td>
     </tr>
     <tr>
         <td>reflog</td>
