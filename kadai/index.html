@@ -63,55 +63,58 @@
         <td>指定のリポジトリに自分のリポジトリのデータを送信する。</td>
         <td>git push ${送信先リポジトリ} ${送信元ブランチ}:${送信先ブランチ}</td>
     </tr>
-    <tr>
-        <td>rebase</td>
-        <td>ブランチの派生元を変更</td>
-        <td>git rebase ${変更先ブランチ名}</td>
-    </tr>
-    <tr>
-        <td>rebase</td>
-        <td>rebaseを元に戻す</td>
-        <td>git rebase --abort</td>
-    </tr>
+
     <tr>
         <td>reset</td>
         <td>HEADの位置を1つ前に戻す。インデックスとワーキングツリーには影響は与えない</td>
         <td>git reset --soft HEAD^</td>
     </tr>
+
     <tr>
         <td>reset</td>
         <td>HEADの位置、インデックスを2つ前に戻す。ワーキングツリーには影響は与えない</td>
         <td>git reset --mixed HEAD^^</td>
     </tr>
+
     <tr>
         <td>reset</td>
         <td>HEADの位置、インデックス、ワーキングツリーを3つ前の状態に戻す</td>
         <td>git reset --hard HEAD^3</td>
     </tr>
     <tr>
-        <td>git commit</td>
+        <td>commit</td>
         <td>コミットを実行する</td>
         <td>git commit</td>
     </tr>
     <tr>
-        <td>git commit</td>
+        <td>commit</td>
         <td>オプションで変更されたファイルを自動検出してコミットする。</td>
         <td>git commit -a</td>
     </tr>
     <tr>
-        <td>git commit</td>
+        <td>commit</td>
         <td>オプションでコメントを引数として指定できる。</td>
         <td>git commit -m</td>
     </tr>
     <tr>
-        <td>git commit</td>
+        <td>commit</td>
         <td>指定したファイルのコミットを実行する</td>
         <td>git commit ${コミットするファイル名}</td>
     </tr>
     <tr>
         <td>git pull</td>
         <td>ほかのリポジトリの変更点をローカルリポジトリにマージする</td>
-	<td>git pull ${変更点の取り込み元リポジトリ}</td>
+        <td>git pull ${変更点の取り込み元リポジトリ}</td>
+    </tr>
+    <tr>
+        <td>checkout</td>
+        <td>ブランチを切り替える</td>
+        <td>git checkout ${ブランチ名}</td>
+    </tr>
+    <tr>
+        <td>checkout</td>
+        <td>ブランチを作成して、そのブランチに切り替える</td>
+        <td>git checkout -b {ブランチ名}</td>
     </tr>
 </table>
 
