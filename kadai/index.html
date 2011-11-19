@@ -192,7 +192,7 @@
     </tr>
     <tr>
         <td>mergetool</td>
-        <td>コンフリクトをマージツールを利用して解決する<br/>操作は、対話式になっており、指示にしたがうことでマージツールを実行する。<br/>マージツールは実行時に、candicateに表示されているツールを利用することができる。<br/>表示されるツールはインストールされていない場合もあるので、必要に応じてインストールする<br/>コンフリクトを修正して、保存を行い、「git add xxx;git commit」することで、コンフリクト修正済みのファイルをコミットする</td>
++        <td>コンフリクトをマージツールを利用して解決する<br/>操作は、対話式になっており、指示にしたがうことでマージツールを実行する。<br/>マージツールは実行時に、candicateに表示されているツールを利用することができる。<br/>表示されるツールはインストールされていない場合もあるので、必要に応じてインストールする<br/>コンフリクトを修正して、保存を行い、「git add xxx;git commit」することで、コンフリクト修正済みのファイルをコミットする</td>
         <td>git mergetool<br/>git mergetool --tool=${ツール名}<br/></td>
     </tr>
     <tr>
@@ -359,6 +359,76 @@
         <td>show</td>
         <td>指定したコミットのメッセージと変更点を表示する</td>
         <td>git show ${コミットID}</td>
+    </tr>
+    <tr>
+        <td>tag</td>
+        <td>タグ一覧を表示する</td>
+        <td>git tag</td>
+    </tr>
+    <tr>
+        <td>tag</td>
+        <td>HEAD にアノテーションなしのタグをつける</td>
+        <td>git tag ${タグ名}</td>
+    </tr>
+    <tr>
+        <td>tag</td>
+        <td>HEAD にアノテーションつきのタグをつける</td>
+        <td>git tag -a ${タグ名} -m "annotation"</td>
+    </tr>
+    <tr>
+        <td>tag</td>
+        <td>特定のコミットにタグをつける</td>
+        <td>git tag ${タグ名} some-commit</td>
+    </tr>
+    <tr>
+        <td>tag</td>
+        <td>タグを削除する</td>
+        <td>git tag -d ${タグ名}</td>
+    </tr>
+    <tr>
+        <td>tag</td>
+        <td>タグをパターンで検索して表示する</td>
+        <td>git tag -l ${タグ名}</td>
+    </tr>
+    <tr>
+        <td>tag</td>
+        <td>タグのリストとアノテーションを表示する</td>
+        <td>git tag -n${表示行数} -l</td>
+    </tr>
+    <tr>
+        <td>gitk</td>
+        <td>コミットグラフ・diff等のユーティリティ表示</td>
+        <td>gitk</td>
+    </tr>
+    <tr>
+        <td>gitk -n ${number}</td>
+        <td>${number}で指定された数のコミットを表示</td>
+        <td>gitk -n ${number}</td>
+    </tr>
+    <tr>
+        <td>gitk --max-count=${number}</td>
+        <td>${number}で指定された数のコミットを表示</td>
+        <td>gitk --max-count=${number}</td>
+    </tr>
+    <tr>
+        <td>gitk --since=${date}</td>
+        <td>${date}で指定された日付以降のコミットを表示</td>
+        <td>gitk --since=${date}</td>
+    </tr>
+    <tr>
+        <td>gitk --until=${date}</td>
+        <td>${date}で指定された日付以前のコミットを表示</td>
+        <td>gitk --until=${date}</td>
+    </tr>
+    <tr>
+        <td>gitk --all</td>
+        <td>すべてのブランチを表示</td>
+        <td>gitk --all</td>
+    </tr>
+    <tr>
+        <td>gitk --select-commit=${ref}</td>
+        <td>${ref}で指定されたコミットをカレント位置にして表示</td>
+        <td>gitk --select-commit=${ref}</td>
     </tr>
     <tr>
         <td>apply</td>
