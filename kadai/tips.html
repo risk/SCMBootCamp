@@ -24,17 +24,27 @@
         <td>HTTPのパスワード</td>
         <td>githubにHTTPアクセスすると毎回のアクセスの時にパスワードが聞かれます。これを設定ファイルに書いておくと毎回の入力を省略できます。</td>
         <td>
-	  <div style="font-weight: bold;">Linux/Mac OS X</div>
-	  <div>[~/.netrc]</div><br/>
-	  machine github.com<br/>
+          <div style="font-weight: bold;">Linux/Mac OS X</div>
+          <div>[~/.netrc]</div><br/>
+          machine github.com<br/>
           login &lt;githubユーザ名&gt;<br/>
-	  password &lt;githubパスワード&gt;<br/><br />
-	  <div style="font-weight: bold;">Windows</div>
-	  <div>[%HOME%¥_netrc]</div><br/>
-	  machine github.com<br/>
+          password &lt;githubパスワード&gt;<br/><br />
+          <div style="font-weight: bold;">Windows</div>
+          <div>[%HOME%¥_netrc]</div><br/>
+          machine github.com<br/>
           login &lt;githubユーザ名&gt;<br/>
-	  password &lt;githubパスワード&gt;<br/><br />
-	</td>
+          password &lt;githubパスワード&gt;<br/><br />
+        </td>
+    </tr>
+
+    <tr>
+        <td>MergeToolの設定</td>
+        <td>git mergetool で呼ぶために自分の好きなMergeToolを設定しておくと便利です。</td>
+        <td>
+          <a href="http://d.hatena.ne.jp/rofi/20110702/1309609370">gitのマージツールにWinMergeを使う</a><br />
+          <a href="http://d.hatena.ne.jp/Hirohiro/20111115/1321372150">Gitのマージツールにp4mergeを使ってみた</a><br />
+          <a href="http://wandering-server.blogspot.com/2010/09/on-ubuntu-10.html">merge.toolの選択 - gitでギトギト on Ubuntu 10.4</a>
+        </td>
     </tr>
 
 </table>
