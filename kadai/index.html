@@ -172,9 +172,44 @@
         <td>git rm ${削除するファイル名}</td>
     </tr>
     <tr>
-        <td>rm</td>
-        <td>実際には削除せずに、どのファイルが削除されるかを表示する</td>
-        <td>git rm -n ${削除するファイル名}</td>
+        <td>log</td>
+        <td>コミットログを表示する</td>
+        <td>git log</td>
+    </tr>
+    <tr>
+        <td>log</td>
+        <td>コミットログを表示する</td>
+        <td>git log</td>
+    </tr>
+    <tr>
+        <td>log</td>
+        <td>コミットログと変更の状態を表示する</td>
+        <td>git log --stat</td>
+    </tr>
+    <tr>
+        <td>log</td>
+        <td>コミットログを指定した数だけ表示する</td>
+        <td>git log -n 5</td>
+    </tr>
+    <tr>
+        <td>log</td>
+        <td>特定のファイルのコミットログを表示する</td>
+        <td>git log file.txt</td>
+    </tr>
+    <tr>
+        <td>log</td>
+        <td>著者、コミッタを正規表現で検索してログを表示する</td>
+        <td>git log --committer=regexp</td>
+    </tr>
+    <tr>
+        <td>log</td>
+        <td>指定した時間に当てはまるログを表示する</td>
+        <td>git log --since=2011-2-6</td>
+    </tr>
+    <tr>
+        <td>log</td>
+        <td>コミットメッセージを逆順にして表示する</td>
+        <td>git log --reverse</td>
     </tr>
     <tr>
         <td>mv</td>
