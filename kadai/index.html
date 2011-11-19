@@ -178,7 +178,7 @@
     <tr>
         <td>mergetool</td>
         <td>コンフリクトをマージツールを利用して解決する<br/>操作は、対話式になっており、指示にしたがうことでマージツールを実行する。<br/>マージツールは実行時に、candicateに表示されているツールを利用することができる。<br/>表示されるツールはインストールされていない場合もあるので、必要に応じてインストールする<br/>コンフリクトを修正して、保存を行い、「git add xxx;git commit」することで、コンフリクト修正済みのファイルをコミットする</td>
-        <td>git mergetool</td>
+        <td>git mergetool<br/>git mergetool --tool=${ツール名}<br/></td>
     </tr>
     <tr>
         <td>status</td>
@@ -304,6 +304,11 @@
         <td>diff</td>
         <td>作業ディレクトリとステージングの変更点をdiffで表示する</td>
         <td>git diff ${ファイル名}</td>
+    </tr>
+    <tr>
+        <td>diff</td>
+        <td>作業ディレクトリと特定のコミットの変更点をdiffで表示する</td>
+        <td>git diff ${ハッシュ}</td>
     </tr>
 </table>
 
