@@ -335,6 +335,41 @@
         <td>指定したコミットのメッセージと変更点を表示する</td>
         <td>git show ${コミットID}</td>
     </tr>
+    <tr>
+        <td>tag</td>
+        <td>タグ一覧を表示する</td>
+        <td>git tag</td>
+    </tr>
+    <tr>
+        <td>tag</td>
+        <td>HEAD にアノテーションなしのタグをつける</td>
+        <td>git tag ${タグ名}</td>
+    </tr>
+    <tr>
+        <td>tag</td>
+        <td>HEAD にアノテーションつきのタグをつける</td>
+        <td>git tag -a ${タグ名} -m "annotation"</td>
+    </tr>
+    <tr>
+        <td>tag</td>
+        <td>特定のコミットにタグをつける</td>
+        <td>git tag ${タグ名} some-commit</td>
+    </tr>
+    <tr>
+        <td>tag</td>
+        <td>タグを削除する</td>
+        <td>git tag -d ${タグ名}</td>
+    </tr>
+    <tr>
+        <td>tag</td>
+        <td>タグをパターンで検索して表示する</td>
+        <td>git tag -l ${タグ名}</td>
+    </tr>
+    <tr>
+        <td>tag</td>
+        <td>タグのリストとアノテーションを表示する</td>
+        <td>git tag -n${表示行数} -l</td>
+    </tr>
 </table>
 
 </body>
