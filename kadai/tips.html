@@ -13,21 +13,30 @@
 </head>
 <body>
 <table border="0">
+
     <tr>
         <th>タイトル</th>
         <th>説明</th>
         <th>使用例</th>
     </tr>
+
     <tr>
         <td>HTTPのパスワード</td>
         <td>githubにHTTPアクセスすると毎回のアクセスの時にパスワードが聞かれます。これを設定ファイルに書いておくと毎回の入力を省略できます。</td>
         <td>
-	  Linux/Mac OS X: ~/.netrc<br/>
+	  <div style="font-weight: bold;">Linux/Mac OS X</div>
+	  <div>[~/.netrc]</div><br/>
 	  machine github.com<br/>
           login &lt;githubユーザ名&gt;<br/>
-	  password &lt;githubパスワード&gt;<br/>
+	  password &lt;githubパスワード&gt;<br/><br />
+	  <div style="font-weight: bold;">Windows</div>
+	  <div>[%HOME%¥_netrc]</div><br/>
+	  machine github.com<br/>
+          login &lt;githubユーザ名&gt;<br/>
+	  password &lt;githubパスワード&gt;<br/><br />
 	</td>
     </tr>
+
 </table>
 
 </body>
