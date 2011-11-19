@@ -361,74 +361,18 @@
         <td>git show ${コミットID}</td>
     </tr>
     <tr>
-        <td>tag</td>
-        <td>タグ一覧を表示する</td>
-        <td>git tag</td>
-    </tr>
-    <tr>
-        <td>tag</td>
-        <td>HEAD にアノテーションなしのタグをつける</td>
-        <td>git tag ${タグ名}</td>
-    </tr>
-    <tr>
-        <td>tag</td>
-        <td>HEAD にアノテーションつきのタグをつける</td>
-        <td>git tag -a ${タグ名} -m "annotation"</td>
-    </tr>
-    <tr>
-        <td>tag</td>
-        <td>特定のコミットにタグをつける</td>
-        <td>git tag ${タグ名} some-commit</td>
-    </tr>
-    <tr>
-        <td>tag</td>
-        <td>タグを削除する</td>
-        <td>git tag -d ${タグ名}</td>
-    </tr>
-    <tr>
-        <td>tag</td>
-        <td>タグをパターンで検索して表示する</td>
-        <td>git tag -l ${タグ名}</td>
-    </tr>
-    <tr>
-        <td>tag</td>
-        <td>タグのリストとアノテーションを表示する</td>
-        <td>git tag -n${表示行数} -l</td>
-    </tr>
-    <tr>
-        <td>gitk</td>
-        <td>コミットグラフ・diff等のユーティリティ表示</td>
-        <td>gitk</td>
-    </tr>
-    <tr>
-        <td>gitk -n ${number}</td>
-        <td>${number}で指定された数のコミットを表示</td>
-        <td>gitk -n ${number}</td>
-    </tr>
-    <tr>
-        <td>gitk --max-count=${number}</td>
-        <td>${number}で指定された数のコミットを表示</td>
-        <td>gitk --max-count=${number}</td>
-    </tr>
-    <tr>
-        <td>gitk --since=${date}</td>
-        <td>${date}で指定された日付以降のコミットを表示</td>
-        <td>gitk --since=${date}</td>
-    </tr>
-    <tr>
-        <td>gitk --until=${date}</td>
-        <td>${date}で指定された日付以前のコミットを表示</td>
-        <td>gitk --until=${date}</td>
-    </tr>
-    <tr>
-        <td>gitk --all</td>
-        <td>すべてのブランチを表示</td>
-        <td>gitk --all</td>
-    </tr>
-    <tr>
-        <td>gitk --select-commit=${ref}</td>
-        <td>${ref}で指定されたコミットをカレント位置にして表示</td>
-        <td>gitk --select-commit=${ref}</td>
+        <td>apply</td>
+        <td>過去の編集内容をパッチとして当てることで復活させる方法。<br/>
+		    1.対象のコミットのコミットIDを確認（コミットログの文字列で検索）<br/>
+			2.特定のコミットからブランチを作成<br/>
+			3.ひとつ前との差分を取り、パッチを作成<br/>
+			4.差分をパッチとして適用
+		</td>
+        <td>git log --grep ${検索文字列}<br/>
+		    git checkout -b ${ブランチ名} ${作成元コミットID}<br/>
+			git diff HEAD^ > ${パッチファイル名}<br/>
+			git apply -p1 ${パッチファイル名}
+		</td>
     </tr>
 </table>
 
