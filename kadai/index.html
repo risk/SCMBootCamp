@@ -310,6 +310,21 @@
         <td>作業ディレクトリと特定のコミットの変更点をdiffで表示する</td>
         <td>git diff ${ハッシュ}</td>
     </tr>
+    <tr>
+        <td>reflog</td>
+        <td>HEADの変遷を確認することができる（コミットではなく、HEADがどう変遷していったかを確認できる。<br/>gcされる前であれば、必ず見つけることができる</td>
+        <td>git reflog</td>
+    </tr>
+    <tr>
+        <td>reflog expire</td>
+        <td>ログが保持される期間に関する操作を行う</td>
+        <td>git reflog expire</td>
+    </tr>
+    <tr>
+        <td>reflog delete</td>
+        <td>不要なrefログを削除する</td>
+        <td>git reflog delete ${削除するreflog(reflogでみれる2カラム目の値を指定する)}</td>
+    </tr>
 </table>
 
 </body>
