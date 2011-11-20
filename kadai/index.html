@@ -12,81 +12,375 @@
   </style>
 </head>
 <body>
-<table border="0">
+<table border="1">
     <tr>
         <th>コマンド</th>
         <th>説明</th>
         <th>使用例</th>
     </tr>
+
     <tr>
-        <td>rebase</td>
-        <td>ブランチの派生元を変更</td>
-        <td>git rebase ${変更先ブランチ名}</td>
+        <td>add</td>
+        <td>全てのファイルをコミット対象として追加する</td>
+        <td>git add .</td>
     </tr>
+
     <tr>
-        <td>rebase</td>
-        <td>rebaseを元に戻す</td>
-        <td>git rebase --abort</td>
+        <td>add</td>
+        <td>任意のファイルをコミット対象として追加する</td>
+        <td>git add ${コミット対象として追加するファイル名}</td>
     </tr>
+
+    <tr>
+        <td>apply</td>
+        <td>過去の編集内容をパッチとして当てることで復活させる方法。<br/>
+		1.対象のコミットのコミットIDを確認（コミットログの文字列で検索）<br/>
+		2.特定のコミットからブランチを作成<br/>
+		3.ひとつ前との差分を取り、パッチを作成<br/>
+		4.差分をパッチとして適用
+	</td>
+        <td>git log --grep ${検索文字列}<br/>
+	    git checkout -b ${ブランチ名} ${作成元コミットID}<br/>
+	    git diff HEAD^ > ${パッチファイル名}<br/>
+	    git apply -p1 ${パッチファイル名}
+	</td>
+    </tr>
+
     <tr>
         <td>branch</td>
         <td>ブランチの一覧を表示</td>
         <td>git branch</td>
     </tr>
-    <tr>
-        <td>branch</td>
-        <td>ブランチを新規作成</td>
-        <td>git branch ${ブランチ名}</td>
-    </tr>
-    <tr>
-        <td>branch</td>
-        <td>ブランチを削除</td>
-        <td>git branch -d ${ブランチ名}</td>
-    </tr>
-    <tr>
-        <td>clone</td>
-        <td>リポジトリの複製（クローン）を作成します。</td>
-        <td>git clone ${複製するリポジトリのURL} ${opt-ローカルのディレクトリ名}</td>
-    </tr>
-    <tr>
-        <td>branch</td>
-        <td>ブランチを削除(未マージのブランチを強制削除)</td>
-        <td>git branch -D ${ブランチ名}</td>
-    </tr>
-    <tr>
-        <td>branch</td>
-        <td>各ブランチにおける直近のコミットを調べる</td>
-        <td>git branch -v</td>
-    </tr>
+
     <tr>
         <td>branch</td>
         <td>現在のブランチにマージ済みのブランチを調べる</td>
         <td>git branch --merged</td>
     </tr>
+
     <tr>
         <td>branch</td>
         <td>現在のブランチに未マージのブランチを調べる</td>
         <td>git branch --no-merged</td>
     </tr>
+
+    <tr>
+        <td>branch</td>
+        <td>ブランチを削除</td>
+        <td>git branch -d ${ブランチ名}</td>
+    </tr>
+
+    <tr>
+        <td>branch</td>
+        <td>ブランチを削除(未マージのブランチを強制削除)</td>
+        <td>git branch -D ${ブランチ名}</td>
+    </tr>
+
+    <tr>
+        <td>branch</td>
+        <td>各ブランチにおける直近のコミットを調べる</td>
+        <td>git branch -v</td>
+    </tr>
+
+
+    <tr>
+        <td>branch</td>
+        <td>ブランチを新規作成</td>
+        <td>git branch ${ブランチ名}</td>
+    </tr>
+
+    <tr>
+        <td>checkout</td>
+        <td>ブランチを作成して、そのブランチに切り替える</td>
+        <td>git checkout -b {ブランチ名}</td>
+    </tr>
+
+    <tr>
+        <td>checkout</td>
+        <td>ブランチを切り替える</td>
+        <td>git checkout ${ブランチ名}</td>
+    </tr>
+
+    <tr>
+        <td>clone</td>
+        <td>リポジトリの複製（クローン）を作成する</td>
+        <td>git clone ${複製するリポジトリのURL} ${opt-ローカルのディレクトリ名}</td>
+    </tr>
+
+    <tr>
+        <td>commit</td>
+        <td>コミットを実行する</td>
+        <td>git commit</td>
+    </tr>
+
+    <tr>
+        <td>commit</td>
+        <td>直前のコミットを取り消してコミットする</td>
+        <td>git commit --amend</td>
+    </tr>
+
+    <tr>
+        <td>commit</td>
+        <td>オプションで変更されたファイルを自動検出してコミットする。</td>
+        <td>git commit -a</td>
+    </tr>
+
+    <tr>
+        <td>commit</td>
+        <td>コミットメッセージを再利用する</td>
+        <td>git commit -c some-commit</td>
+    </tr>
+
+    <tr>
+        <td>commit</td>
+        <td>オプションでコメントを引数として指定できる。</td>
+        <td>git commit -m</td>
+    </tr>
+
+    <tr>
+        <td>commit</td>
+        <td>変更点を表示しながらコミットメッセージを編集してコミットする</td>
+        <td>git commit -v</td>
+    </tr>
+
+    <tr>
+        <td>commit</td>
+        <td>指定したファイルのコミットを実行する</td>
+        <td>git commit ${コミットするファイル名}</td>
+    </tr>
+
+    <tr>
+        <td>diff</td>
+        <td>作業ディレクトリと特定のコミットの変更点をdiffで表示する</td>
+        <td>git diff ${コミットID}</td>
+    </tr>
+
+    <tr>
+        <td>diff</td>
+        <td>作業ディレクトリとステージングの変更点をdiffで表示する</td>
+        <td>git diff ${ファイル名}</td>
+    </tr>
+
+    <tr>
+        <td>fetch</td>
+        <td>リモートリポジトリから最新のコミットを取得する(pullと異なりマージは行わない)</td>
+        <td>git fetch ${リポジトリ名} 又は git fetch ${URL}</td>
+    </tr>
+
+    <tr>
+        <td>gitk</td>
+        <td>コミットグラフ・diff等のユーティリティ表示</td>
+        <td>gitk</td>
+    </tr>
+
+    <tr>
+        <td>gitk --all</td>
+        <td>すべてのブランチを表示</td>
+        <td>gitk --all</td>
+    </tr>
+
+    <tr>
+        <td>gitk --max-count=${number}</td>
+        <td>${number}で指定された数のコミットを表示</td>
+        <td>gitk --max-count=${number}</td>
+    </tr>
+
+    <tr>
+        <td>gitk --select-commit=${ref}</td>
+        <td>${ref}で指定されたコミットをカレント位置にして表示</td>
+        <td>gitk --select-commit=${ref}</td>
+    </tr>
+
+    <tr>
+        <td>gitk --since=${date}</td>
+        <td>${date}で指定された日付以降のコミットを表示</td>
+        <td>gitk --since=${date}</td>
+    </tr>
+
+    <tr>
+        <td>gitk --until=${date}</td>
+        <td>${date}で指定された日付以前のコミットを表示</td>
+        <td>gitk --until=${date}</td>
+    </tr>
+
+    <tr>
+        <td>gitk -n ${number}</td>
+        <td>${number}で指定された数のコミットを表示</td>
+        <td>gitk -n ${number}</td>
+    </tr>
+
+    <tr>
+        <td>help</td>
+        <td>コマンドの一覧を表示</td>
+        <td>git help</td>
+    </tr>
+
+    <tr>
+        <td>help -a</td>
+        <td>利用可能なコマンドとパラメータの一覧を表示</td>
+        <td>git help -a</td>
+    </tr>
+
+    <tr>
+        <td>help -i ${command}</td>
+        <td>${command}で指定されたコマンドの詳細ヘルプをinfo形式で表示</td>
+        <td>help -i ${command}</td>
+    </tr>
+
+    <tr>
+        <td>help -m ${command}</td>
+        <td>${command}で指定されたコマンドの詳細ヘルプをman形式で表示</td>
+        <td>help -m ${command}</td>
+    </tr>
+
+    <tr>
+        <td>help -w ${command}</td>
+        <td>${command}で指定されたコマンドの詳細ヘルプをhtml形式で表示</td>
+        <td>htlp -w ${command}</td>
+    </tr>
+
+    <tr>
+        <td>help ${command}</td>
+        <td>${command}で指定されたコマンドの詳細ヘルプを表示</td>
+        <td>git help ${command}</td>
+    </tr>
+
+    <tr>
+        <td>log</td>
+        <td>コミットログを表示する</td>
+        <td>git log</td>
+    </tr>
+
+    <tr>
+        <td>log</td>
+        <td>著者、コミッタを正規表現で検索してログを表示する</td>
+        <td>git log --committer=regexp</td>
+    </tr>
+
+    <tr>
+        <td>log</td>
+        <td>コミットメッセージを逆順にして表示する</td>
+        <td>git log --reverse</td>
+    </tr>
+
+    <tr>
+        <td>log</td>
+        <td>指定した時間に当てはまるログを表示する</td>
+        <td>git log --since=2011-2-6</td>
+    </tr>
+
+    <tr>
+        <td>log</td>
+        <td>コミットログと変更の状態を表示する</td>
+        <td>git log --stat</td>
+    </tr>
+
+    <tr>
+        <td>log</td>
+        <td>コミットログを指定した数だけ表示する</td>
+        <td>git log -n 5</td>
+    </tr>
+
+    <tr>
+        <td>log</td>
+        <td>特定のファイルのコミットログを表示する</td>
+        <td>git log file.txt</td>
+    </tr>
+
+    <tr>
+        <td>merge</td>
+        <td>現在のブランチに指定したブランチへのコミットをマージする</td>
+        <td>git merge ${ブランチ名}</td>
+    </tr>
+
+    <tr>
+        <td>mergetool</td>
+        <td>コンフリクトをマージツールを利用して解決する<br/>操作は、対話式になっており、指示にしたがうことでマージツールを実行する。<br/>マージツールは実行時に、candicateに表示されているツールを利用することができる。<br/>表示されるツールはインストールされていない場合もあるので、必要に応じてインストールする<br/>コンフリクトを修正して、保存を行い、「git add xxx;git commit」することで、コンフリクト修正済みのファイルをコミットする</td>
+        <td>git mergetool<br/>git mergetool --tool=${ツール名}<br/></td>
+    </tr>
+
+    <tr>
+        <td>mv</td>
+        <td>ファイルを移動する</td>
+        <td>git mv ${from} ${to}</td>
+    </tr>
+
+    <tr>
+        <td>pull</td>
+        <td>ほかのリポジトリの変更点をローカルリポジトリにマージする</td>
+        <td>git pull ${変更点の取り込み元リポジトリ}</td>
+    </tr>
+
     <tr>
         <td>push</td>
         <td>指定のリポジトリに自分のリポジトリのデータを送信する。</td>
         <td>git push ${送信先リポジトリ} ${送信元ブランチ}:${送信先ブランチ}</td>
     </tr>
-    <tr>
-        <td>rebase</td>
-        <td>ブランチの派生元を変更</td>
-        <td>git rebase ${変更先ブランチ名}</td>
-    </tr>
+
     <tr>
         <td>rebase</td>
         <td>rebaseを元に戻す</td>
         <td>git rebase --abort</td>
     </tr>
+
+    <tr>
+        <td>rebase</td>
+        <td>ブランチの派生元を変更</td>
+        <td>git rebase ${変更先ブランチ名}</td>
+    </tr>
+
+    <tr>
+        <td>reflog</td>
+        <td>HEADの変遷を確認することができる（コミットではなく、HEADがどう変遷していったかを確認できる。<br/>gcされる前であれば、必ず見つけることができる</td>
+        <td>git reflog</td>
+    </tr>
+
+    <tr>
+        <td>reflog delete</td>
+        <td>不要なrefログを削除する</td>
+        <td>git reflog delete ${削除するreflog(reflogでみれる2カラム目の値を指定する)}</td>
+    </tr>
+
+    <tr>
+        <td>reflog expire</td>
+        <td>ログが保持される期間に関する操作を行う</td>
+        <td>git reflog expire</td>
+    </tr>
+
+    <tr>
+        <td>remote</td>
+        <td>設定済みのリモートリポジトリのハンドル名を表示</td>
+        <td>git remote</td>
+    </tr>
+
+    <tr>
+        <td>remote</td>
+        <td>設定済みのリモートリポジトリのハンドル名とURLを表示</td>
+        <td>git remote -v</td>
+    </tr>
+
+    <tr>
+        <td>remote</td>
+        <td>リモートリポジトリを追加</td>
+        <td>git remote add ${ハンドル名} ${URL}</td>
+    </tr>
+
+    <tr>
+        <td>remote</td>
+        <td>リモートリポジトリを削除</td>
+        <td>git remote rm ${ハンドル名}</td>
+    </tr>
+
+    <tr>
+        <td>remote</td>
+        <td>リモートリポジトリの詳細情報を表示</td>
+        <td>git remote show ${ハンドル名}</td>
+    </tr>
+
     <tr>
         <td>reset</td>
-        <td>HEADの位置を1つ前に戻す。インデックスとワーキングツリーには影響は与えない</td>
-        <td>git reset --soft HEAD^</td>
+        <td>HEADの位置、インデックス、ワーキングツリーを3つ前の状態に戻す</td>
+        <td>git reset --hard HEAD^3</td>
     </tr>
 
     <tr>
@@ -97,58 +391,50 @@
 
     <tr>
         <td>reset</td>
-        <td>HEADの位置、インデックス、ワーキングツリーを3つ前の状態に戻す</td>
-        <td>git reset --hard HEAD^3</td>
+        <td>HEADの位置を1つ前に戻す。インデックスとワーキングツリーには影響は与えない</td>
+        <td>git reset --soft HEAD^</td>
     </tr>
+
     <tr>
-        <td>commit</td>
-        <td>コミットを実行する</td>
-        <td>git commit</td>
+        <td>revert</td>
+        <td>特定のコミットを取り消す（ステージングには上がるがコミットは行わない）</td>
+        <td>git revert -n ${コミットID}</td>
     </tr>
+
     <tr>
-        <td>commit</td>
-        <td>オプションで変更されたファイルを自動検出してコミットする。</td>
-        <td>git commit -a</td>
+        <td>revert</td>
+        <td>特定のコミットを取り消す（自動的にコミットを行う）</td>
+        <td>git revert ${コミットID}</td>
     </tr>
+
     <tr>
-        <td>commit</td>
-        <td>オプションでコメントを引数として指定できる。</td>
-        <td>git commit -m</td>
+        <td>rm</td>
+        <td>指定したファイルを、ツリーから削除する</td>
+        <td>git rm ${削除するファイル名}</td>
     </tr>
+
     <tr>
-        <td>commit</td>
-        <td>指定したファイルのコミットを実行する</td>
-        <td>git commit ${コミットするファイル名}</td>
+        <td>show</td>
+        <td>最新のコミットのメッセージと変更点を表示する</td>
+        <td>git show</td>
     </tr>
+
     <tr>
-        <td>commit</td>
-        <td>直前のコミットを取り消してコミットする</td>
-        <td>git commit --amend</td>
+        <td>show</td>
+        <td>指定したコミットのメッセージと変更点を表示する</td>
+        <td>git show ${コミットID}</td>
     </tr>
-    <tr>
-        <td>commit</td>
-        <td>変更点を表示しながらコミットメッセージを編集してコミットする</td>
-        <td>git commit -v</td>
-    </tr>
-    <tr>
-        <td>commit</td>
-        <td>コミットメッセージを再利用する</td>
-        <td>git commit -c some-commit</td>
-    </tr>
+
     <tr>
         <td>stash</td>
         <td>ステージされていない変更を一時的に保存する<br/>行うごとに蓄積していく</td>
         <td>git stash<br/>git stash save ${メッセージ}</td>
     </tr>
+
     <tr>
-        <td>stash list</td>
-        <td>保存したリストを確認する</td>
-        <td>git stash list</td>
-    </tr>
-    <tr>
-        <td>stash pop</td>
-        <td>一番最近に保存した変更を元に戻す</td>
-        <td>git stash pop</td>
+        <td>stash clear</td>
+        <td>保存した変更をすべて捨てる</td>
+        <td>git stash clear</td>
     </tr>
 
     <tr>
@@ -156,295 +442,73 @@
         <td>一番最近に保存した変更を捨てる</td>
         <td>git stash drop</td>
     </tr>
+
     <tr>
-        <td>stash clear</td>
-        <td>保存した変更をすべて捨てる</td>
-        <td>git stash clear</td>
-    <tr>
-        <td>add</td>
-        <td>任意のファイルをコミット対象として追加する</td>
-        <td>git add ${コミット対象として追加するファイル名}</td>
+        <td>stash list</td>
+        <td>保存したリストを確認する</td>
+        <td>git stash list</td>
     </tr>
+
     <tr>
-        <td>add</td>
-        <td>全てのファイルをコミット対象として追加する</td>
-        <td>git add .</td>
+        <td>stash pop</td>
+        <td>一番最近に保存した変更を元に戻す</td>
+        <td>git stash pop</td>
     </tr>
-    <tr>
-        <td>pull</td>
-        <td>ほかのリポジトリの変更点をローカルリポジトリにマージする</td>
-        <td>git pull ${変更点の取り込み元リポジトリ}</td>
-    </tr>
-    <tr>
-        <td>checkout</td>
-        <td>ブランチを切り替える</td>
-        <td>git checkout ${ブランチ名}</td>
-    </tr>
-    <tr>
-        <td>checkout</td>
-        <td>ブランチを作成して、そのブランチに切り替える</td>
-        <td>git checkout -b {ブランチ名}</td>
-    </tr>
-    <tr>
-        <td>merge</td>
-        <td>現在のブランチに指定したブランチへのコミットをマージする</td>
-        <td>git merge ${ブランチ名}</td>
-    </tr>
-    <tr>
-        <td>mergetool</td>
-+        <td>コンフリクトをマージツールを利用して解決する<br/>操作は、対話式になっており、指示にしたがうことでマージツールを実行する。<br/>マージツールは実行時に、candicateに表示されているツールを利用することができる。<br/>表示されるツールはインストールされていない場合もあるので、必要に応じてインストールする<br/>コンフリクトを修正して、保存を行い、「git add xxx;git commit」することで、コンフリクト修正済みのファイルをコミットする</td>
-        <td>git mergetool<br/>git mergetool --tool=${ツール名}<br/></td>
-    </tr>
+
     <tr>
         <td>status</td>
         <td>変更が加えられたファイルを表示する</td>
         <td>git status</td>
     </tr>
+
     <tr>
         <td>status</td>
         <td>変更が加えられたファイルを表示する（短縮形で表示）</td>
         <td>git status -s</td>
     </tr>
-    <tr>
-        <td>rm</td>
-        <td>指定したファイルを、ツリーから削除する</td>
-        <td>git rm ${削除するファイル名}</td>
-    </tr>
-    <tr>
-        <td>log</td>
-        <td>コミットログを表示する</td>
-        <td>git log</td>
-    </tr>
-    <tr>
-        <td>log</td>
-        <td>コミットログを表示する</td>
-        <td>git log</td>
-    </tr>
-    <tr>
-        <td>log</td>
-        <td>コミットログと変更の状態を表示する</td>
-        <td>git log --stat</td>
-    </tr>
-    <tr>
-        <td>log</td>
-        <td>コミットログを指定した数だけ表示する</td>
-        <td>git log -n 5</td>
-    </tr>
-    <tr>
-        <td>log</td>
-        <td>特定のファイルのコミットログを表示する</td>
-        <td>git log file.txt</td>
-    </tr>
-    <tr>
-        <td>log</td>
-        <td>著者、コミッタを正規表現で検索してログを表示する</td>
-        <td>git log --committer=regexp</td>
-    </tr>
-    <tr>
-        <td>log</td>
-        <td>指定した時間に当てはまるログを表示する</td>
-        <td>git log --since=2011-2-6</td>
-    </tr>
-    <tr>
-        <td>log</td>
-        <td>コミットメッセージを逆順にして表示する</td>
-        <td>git log --reverse</td>
-    </tr>
-    <tr>
-        <td>mv</td>
-        <td>ファイルを移動する</td>
-        <td>git mv ${from} ${to}</td>
-    </tr>
-    <tr>
-        <td>fetch</td>
-        <td>リモートリポジトリから最新のコミットを取得する(pullと異なりマージは行わない)</td>
-        <td>git fetch ${リポジトリ名} 又は git fetch ${URL}</td>
-    </tr>
-    <tr>
-        <td>help</td>
-        <td>コマンドの一覧を表示</td>
-        <td>git help</td>
-    </tr>
-    <tr>
-        <td>help -a</td>
-        <td>利用可能なコマンドとパラメータの一覧を表示</td>
-        <td>git help -a</td>
-    </tr>
-    <tr>
-        <td>help ${command}</td>
-        <td>${command}で指定されたコマンドの詳細ヘルプを表示</td>
-        <td>git help ${command}</td>
-    </tr>
-    <tr>
-        <td>help -m ${command}</td>
-        <td>${command}で指定されたコマンドの詳細ヘルプをman形式で表示</td>
-        <td>help -m ${command}</td>
-    </tr>
-    <tr>
-        <td>help -i ${command}</td>
-        <td>${command}で指定されたコマンドの詳細ヘルプをinfo形式で表示</td>
-        <td>help -i ${command}</td>
-    </tr>
-    <tr>
-        <td>help -w ${command}</td>
-        <td>${command}で指定されたコマンドの詳細ヘルプをhtml形式で表示</td>
-        <td>htlp -w ${command}</td>
-    </tr>
-    <tr>
-        <td>remote</td>
-        <td>設定済みのリモートリポジトリのハンドル名を表示</td>
-        <td>git remote</td>
-    </tr>
-    <tr>
-        <td>remote</td>
-        <td>設定済みのリモートリポジトリのハンドル名とURLを表示</td>
-        <td>git remote -v</td>
-    </tr>
-    <tr>
-        <td>remote</td>
-        <td>リモートリポジトリを追加</td>
-        <td>git remote add ${ハンドル名} ${URL}</td>
-    </tr>
-    <tr>
-        <td>remote</td>
-        <td>リモートリポジトリを削除</td>
-        <td>git remote rm ${ハンドル名}</td>
-    </tr>
-    <tr>
-        <td>remote</td>
-        <td>リモートリポジトリの詳細情報を表示</td>
-        <td>git remote show ${ハンドル名}</td>
-    </tr>
-    <tr>
-        <td>diff</td>
-        <td>作業ディレクトリとステージングの変更点をdiffで表示する</td>
-        <td>git diff ${ファイル名}</td>
-    </tr>
-    <tr>
-        <td>diff</td>
-        <td>作業ディレクトリと特定のコミットの変更点をdiffで表示する</td>
-        <td>git diff ${コミットID}</td>
-    </tr>
-    <tr>
-        <td>revert</td>
-        <td>特定のコミットを取り消す（自動的にコミットを行う）</td>
-        <td>git revert ${コミットID}</td>
-    </tr>
-    <tr>
-        <td>revert</td>
-        <td>特定のコミットを取り消す（ステージングには上がるがコミットは行わない）</td>
-        <td>git revert -n ${コミットID}</td>
-    </tr>
-    <tr>
-        <td>reflog</td>
-        <td>HEADの変遷を確認することができる（コミットではなく、HEADがどう変遷していったかを確認できる。<br/>gcされる前であれば、必ず見つけることができる</td>
-        <td>git reflog</td>
-    </tr>
-    <tr>
-        <td>reflog expire</td>
-        <td>ログが保持される期間に関する操作を行う</td>
-        <td>git reflog expire</td>
-    </tr>
-    <tr>
-        <td>reflog delete</td>
-        <td>不要なrefログを削除する</td>
-        <td>git reflog delete ${削除するreflog(reflogでみれる2カラム目の値を指定する)}</td>
-    </tr>
-    <tr>
-        <td>show</td>
-        <td>最新のコミットのメッセージと変更点を表示する</td>
-        <td>git show</td>
-    </tr>
-    <tr>
-        <td>show</td>
-        <td>指定したコミットのメッセージと変更点を表示する</td>
-        <td>git show ${コミットID}</td>
-    </tr>
+
     <tr>
         <td>tag</td>
         <td>タグ一覧を表示する</td>
         <td>git tag</td>
     </tr>
-    <tr>
-        <td>tag</td>
-        <td>HEAD にアノテーションなしのタグをつける</td>
-        <td>git tag ${タグ名}</td>
-    </tr>
+
     <tr>
         <td>tag</td>
         <td>HEAD にアノテーションつきのタグをつける</td>
         <td>git tag -a ${タグ名} -m "annotation"</td>
     </tr>
-    <tr>
-        <td>tag</td>
-        <td>特定のコミットにタグをつける</td>
-        <td>git tag ${タグ名} some-commit</td>
-    </tr>
+
     <tr>
         <td>tag</td>
         <td>タグを削除する</td>
         <td>git tag -d ${タグ名}</td>
     </tr>
+
     <tr>
         <td>tag</td>
         <td>タグをパターンで検索して表示する</td>
         <td>git tag -l ${タグ名}</td>
     </tr>
+
     <tr>
         <td>tag</td>
         <td>タグのリストとアノテーションを表示する</td>
         <td>git tag -n${表示行数} -l</td>
     </tr>
-    <tr>
-        <td>gitk</td>
-        <td>コミットグラフ・diff等のユーティリティ表示</td>
-        <td>gitk</td>
-    </tr>
-    <tr>
-        <td>gitk -n ${number}</td>
-        <td>${number}で指定された数のコミットを表示</td>
-        <td>gitk -n ${number}</td>
-    </tr>
-    <tr>
-        <td>gitk --max-count=${number}</td>
-        <td>${number}で指定された数のコミットを表示</td>
-        <td>gitk --max-count=${number}</td>
-    </tr>
-    <tr>
-        <td>gitk --since=${date}</td>
-        <td>${date}で指定された日付以降のコミットを表示</td>
-        <td>gitk --since=${date}</td>
-    </tr>
-    <tr>
-        <td>gitk --until=${date}</td>
-        <td>${date}で指定された日付以前のコミットを表示</td>
-        <td>gitk --until=${date}</td>
-    </tr>
-    <tr>
-        <td>gitk --all</td>
-        <td>すべてのブランチを表示</td>
-        <td>gitk --all</td>
-    </tr>
-    <tr>
-        <td>gitk --select-commit=${ref}</td>
-        <td>${ref}で指定されたコミットをカレント位置にして表示</td>
-        <td>gitk --select-commit=${ref}</td>
-    </tr>
-    <tr>
-        <td>apply</td>
-        <td>過去の編集内容をパッチとして当てることで復活させる方法。<br/>
-		    1.対象のコミットのコミットIDを確認（コミットログの文字列で検索）<br/>
-			2.特定のコミットからブランチを作成<br/>
-			3.ひとつ前との差分を取り、パッチを作成<br/>
-			4.差分をパッチとして適用
-		</td>
-        <td>git log --grep ${検索文字列}<br/>
-		    git checkout -b ${ブランチ名} ${作成元コミットID}<br/>
-			git diff HEAD^ > ${パッチファイル名}<br/>
-			git apply -p1 ${パッチファイル名}
-		</td>
-    </tr>
-</table>
 
+    <tr>
+        <td>tag</td>
+        <td>HEAD にアノテーションなしのタグをつける</td>
+        <td>git tag ${タグ名}</td>
+    </tr>
+
+    <tr>
+        <td>tag</td>
+        <td>特定のコミットにタグをつける</td>
+        <td>git tag ${タグ名} some-commit</td>
+    </tr>
+
+</table>
 </body>
 </html>
