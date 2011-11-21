@@ -12,6 +12,36 @@
   </style>
 </head>
 <body>
+
+<h1>Git チートシート</h1>
+<h2>一覧</h2>
+<h3><a href="#add">add - ファイルをステージする</a></h3>
+<h3><a href="#apply">apply - 過去の編集内容パッチをあてる</a></h3>
+<h3><a href="#branch">branch - ブランチ関連操作</a></h3>
+<h3><a href="#checkout">checkout - ブランチ切り替え</a></h3>
+<h3><a href="#clone">clone - リポジトリの複製</a></h3>
+<h3><a href="#commit">commit - コミット</a></h3>
+<h3><a href="#diff">diff - 差分表示</a></h3>
+<h3><a href="#fetch">fetch - 最新のコミット情報を取得する</a></h3>
+<h3><a href="#gitk">gitk - グラフィカルなGUIを利用したコミットグラフ</a></h3>
+<h3><a href="#help">help - ヘルプ表示</a></h3>
+<h3><a href="#log">log - コミットログの表示</a></h3>
+<h3><a href="#merge">merge - マージ</a></h3>
+<h3><a href="#mergetool">mergetool - GUIを利用したコンフリクトの解決</a></h3>
+<h3><a href="#mv">mv - ファイルの移動と名前変更</a></h3>
+<h3><a href="#pull">pull - 他のリポジトリの変更の取得</a></h3>
+<h3><a href="#push">push - 自分のリポジトリの情報を送信</a></h3>
+<h3><a href="#rebase">rebase - ブランチ派生元の変更</a></h3>
+<h3><a href="#reflog">reflog - HEADの履歴表示</a></h3>
+<h3><a href="#remote">remote - リモートリポジトリの操作</a></h3>
+<h3><a href="#reset">reset - HEADの位置を変更する</a></h3>
+<h3><a href="#revert">revert - 特定コミットの取消</a></h3>
+<h3><a href="#rm">rm - ファイルの削除</a></h3>
+<h3><a href="#show">show - 最新のコミット情報の表示</a></h3>
+<h3><a href="#stash">stash - コミットされていない変更を一時的に保存/復元</a></h3>
+<h3><a href="#status">status - リポジトリの変更状況の表示</a></h3>
+<h3><a href="#tag">tag - タグ操作</a></h3>
+
 <table border="1">
     <tr>
         <th>コマンド</th>
@@ -19,7 +49,7 @@
         <th>使用例</th>
     </tr>
 
-    <tr>
+    <tr id="add">
         <td>add</td>
         <td>全てのファイルをコミット対象として追加する</td>
         <td>git add .</td>
@@ -31,7 +61,7 @@
         <td>git add ${コミット対象として追加するファイル名}</td>
     </tr>
 
-    <tr>
+    <tr id="apply">
         <td>apply</td>
         <td>過去の編集内容をパッチとして当てることで復活させる方法。<br/>
 		1.対象のコミットのコミットIDを確認（コミットログの文字列で検索）<br/>
@@ -46,7 +76,7 @@
 	</td>
     </tr>
 
-    <tr>
+    <tr id="branch">
         <td>branch</td>
         <td>ブランチの一覧を表示</td>
         <td>git branch</td>
@@ -89,7 +119,7 @@
         <td>git branch ${ブランチ名}</td>
     </tr>
 
-    <tr>
+    <tr id="checkout">
         <td>checkout</td>
         <td>ブランチを作成して、そのブランチに切り替える</td>
         <td>git checkout -b {ブランチ名}</td>
@@ -101,13 +131,13 @@
         <td>git checkout ${ブランチ名}</td>
     </tr>
 
-    <tr>
+    <tr id="clone">
         <td>clone</td>
         <td>リポジトリの複製（クローン）を作成する</td>
         <td>git clone ${複製するリポジトリのURL} ${opt-ローカルのディレクトリ名}</td>
     </tr>
 
-    <tr>
+    <tr id="commit">
         <td>commit</td>
         <td>コミットを実行する</td>
         <td>git commit</td>
@@ -149,7 +179,7 @@
         <td>git commit ${コミットするファイル名}</td>
     </tr>
 
-    <tr>
+    <tr id="diff">
         <td>diff</td>
         <td>作業ディレクトリと特定のコミットの変更点をdiffで表示する</td>
         <td>git diff ${コミットID}</td>
@@ -161,13 +191,13 @@
         <td>git diff ${ファイル名}</td>
     </tr>
 
-    <tr>
+    <tr id="fetch">
         <td>fetch</td>
         <td>リモートリポジトリから最新のコミットを取得する(pullと異なりマージは行わない)</td>
         <td>git fetch ${リポジトリ名} 又は git fetch ${URL}</td>
     </tr>
 
-    <tr>
+    <tr id="gitk">
         <td>gitk</td>
         <td>コミットグラフ・diff等のユーティリティ表示</td>
         <td>gitk</td>
@@ -209,7 +239,7 @@
         <td>gitk -n ${number}</td>
     </tr>
 
-    <tr>
+    <tr id="help">
         <td>help</td>
         <td>コマンドの一覧を表示</td>
         <td>git help</td>
@@ -245,7 +275,7 @@
         <td>git help ${command}</td>
     </tr>
 
-    <tr>
+    <tr id="log">
         <td>log</td>
         <td>コミットログを表示する</td>
         <td>git log</td>
@@ -287,37 +317,37 @@
         <td>git log file.txt</td>
     </tr>
 
-    <tr>
+    <tr id="merge">
         <td>merge</td>
         <td>現在のブランチに指定したブランチへのコミットをマージする</td>
         <td>git merge ${ブランチ名}</td>
     </tr>
 
-    <tr>
+    <tr id="mergetool">
         <td>mergetool</td>
         <td>コンフリクトをマージツールを利用して解決する<br/>操作は、対話式になっており、指示にしたがうことでマージツールを実行する。<br/>マージツールは実行時に、candicateに表示されているツールを利用することができる。<br/>表示されるツールはインストールされていない場合もあるので、必要に応じてインストールする<br/>コンフリクトを修正して、保存を行い、「git add xxx;git commit」することで、コンフリクト修正済みのファイルをコミットする</td>
         <td>git mergetool<br/>git mergetool --tool=${ツール名}<br/></td>
     </tr>
 
-    <tr>
+    <tr id="mv">
         <td>mv</td>
         <td>ファイルを移動する</td>
         <td>git mv ${from} ${to}</td>
     </tr>
 
-    <tr>
+    <tr id="pull">
         <td>pull</td>
         <td>ほかのリポジトリの変更点をローカルリポジトリにマージする</td>
         <td>git pull ${変更点の取り込み元リポジトリ}</td>
     </tr>
 
-    <tr>
+    <tr id="push">
         <td>push</td>
         <td>指定のリポジトリに自分のリポジトリのデータを送信する。</td>
         <td>git push ${送信先リポジトリ} ${送信元ブランチ}:${送信先ブランチ}</td>
     </tr>
 
-    <tr>
+    <tr id="rebase">
         <td>rebase</td>
         <td>rebaseを元に戻す</td>
         <td>git rebase --abort</td>
@@ -329,7 +359,7 @@
         <td>git rebase ${変更先ブランチ名}</td>
     </tr>
 
-    <tr>
+    <tr id="reflog">
         <td>reflog</td>
         <td>HEADの変遷を確認することができる（コミットではなく、HEADがどう変遷していったかを確認できる。<br/>gcされる前であれば、必ず見つけることができる</td>
         <td>git reflog</td>
@@ -347,7 +377,7 @@
         <td>git reflog expire</td>
     </tr>
 
-    <tr>
+    <tr id="remote">
         <td>remote</td>
         <td>設定済みのリモートリポジトリのハンドル名を表示</td>
         <td>git remote</td>
@@ -377,7 +407,7 @@
         <td>git remote show ${ハンドル名}</td>
     </tr>
 
-    <tr>
+    <tr id="reset">
         <td>reset</td>
         <td>HEADの位置、インデックス、ワーキングツリーを3つ前の状態に戻す</td>
         <td>git reset --hard HEAD^3</td>
@@ -395,7 +425,7 @@
         <td>git reset --soft HEAD^</td>
     </tr>
 
-    <tr>
+    <tr id="revert">
         <td>revert</td>
         <td>特定のコミットを取り消す（ステージングには上がるがコミットは行わない）</td>
         <td>git revert -n ${コミットID}</td>
@@ -407,13 +437,13 @@
         <td>git revert ${コミットID}</td>
     </tr>
 
-    <tr>
+    <tr id="rm">
         <td>rm</td>
         <td>指定したファイルを、ツリーから削除する</td>
         <td>git rm ${削除するファイル名}</td>
     </tr>
 
-    <tr>
+    <tr id="show">
         <td>show</td>
         <td>最新のコミットのメッセージと変更点を表示する</td>
         <td>git show</td>
@@ -425,7 +455,7 @@
         <td>git show ${コミットID}</td>
     </tr>
 
-    <tr>
+    <tr id="stash">
         <td>stash</td>
         <td>ステージされていない変更を一時的に保存する<br/>行うごとに蓄積していく</td>
         <td>git stash<br/>git stash save ${メッセージ}</td>
@@ -455,7 +485,7 @@
         <td>git stash pop</td>
     </tr>
 
-    <tr>
+    <tr id="status">
         <td>status</td>
         <td>変更が加えられたファイルを表示する</td>
         <td>git status</td>
@@ -467,7 +497,7 @@
         <td>git status -s</td>
     </tr>
 
-    <tr>
+    <tr id="tag">
         <td>tag</td>
         <td>タグ一覧を表示する</td>
         <td>git tag</td>
