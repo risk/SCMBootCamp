@@ -9,6 +9,9 @@
   <style type="text/css">
     p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Hiragino Kaku Gothic ProN'}
     span.s1 {font: 12.0px Helvetica}
+    table.t1 {border: solid 1px #000000; border-collapse: collapse; border-spacing: 0px}
+    td.td1 {padding: 8px; margin: 0px; border: solid 1px #000000; font: 14.0px 'Hiragino Kaku Gothic ProN';}
+    th.th1 {padding: 5px; margin: 0px; border: solid 1px #000000;}
   </style>
 </head>
 <body>
@@ -42,34 +45,34 @@
 <h3><a href="#status">status - リポジトリの変更状況の表示</a></h3>
 <h3><a href="#tag">tag - タグ操作</a></h3>
 
-<table border="1">
+<table class="t1">
     <tr>
-        <th>コマンド</th>
-        <th>説明</th>
-        <th>使用例</th>
+        <th class="th1">コマンド</th>
+        <th class="th1">説明</th>
+        <th class="th1">使用例</th>
     </tr>
 
     <tr id="add">
-        <td>add</td>
-        <td>全てのファイルをコミット対象として追加する</td>
-        <td>git add .</td>
+        <td class="td1">add</td>
+        <td class="td1">全てのファイルをコミット対象として追加する</td>
+        <td class="td1">git add .</td>
     </tr>
 
     <tr>
-        <td>add</td>
-        <td>任意のファイルをコミット対象として追加する</td>
-        <td>git add ${コミット対象として追加するファイル名}</td>
+        <td class="td1">add</td>
+        <td class="td1">任意のファイルをコミット対象として追加する</td>
+        <td class="td1">git add ${コミット対象として追加するファイル名}</td>
     </tr>
 
     <tr id="apply">
-        <td>apply</td>
-        <td>過去の編集内容をパッチとして当てることで復活させる方法。<br/>
+        <td class="td1">apply</td>
+        <td class="td1">過去の編集内容をパッチとして当てることで復活させる方法。<br/>
 		1.対象のコミットのコミットIDを確認（コミットログの文字列で検索）<br/>
 		2.特定のコミットからブランチを作成<br/>
 		3.ひとつ前との差分を取り、パッチを作成<br/>
 		4.差分をパッチとして適用
 	</td>
-        <td>git log --grep ${検索文字列}<br/>
+        <td class="td1">git log --grep ${検索文字列}<br/>
 	    git checkout -b ${ブランチ名} ${作成元コミットID}<br/>
 	    git diff HEAD^ > ${パッチファイル名}<br/>
 	    git apply -p1 ${パッチファイル名}
@@ -77,466 +80,466 @@
     </tr>
 
     <tr id="branch">
-        <td>branch</td>
-        <td>ブランチの一覧を表示</td>
-        <td>git branch</td>
+        <td class="td1">branch</td>
+        <td class="td1">ブランチの一覧を表示</td>
+        <td class="td1">git branch</td>
     </tr>
 
     <tr>
-        <td>branch</td>
-        <td>現在のブランチにマージ済みのブランチを調べる</td>
-        <td>git branch --merged</td>
+        <td class="td1">branch</td>
+        <td class="td1">現在のブランチにマージ済みのブランチを調べる</td>
+        <td class="td1">git branch --merged</td>
     </tr>
 
     <tr>
-        <td>branch</td>
-        <td>現在のブランチに未マージのブランチを調べる</td>
-        <td>git branch --no-merged</td>
+        <td class="td1">branch</td>
+        <td class="td1">現在のブランチに未マージのブランチを調べる</td>
+        <td class="td1">git branch --no-merged</td>
     </tr>
 
     <tr>
-        <td>branch</td>
-        <td>ブランチを削除</td>
-        <td>git branch -d ${ブランチ名}</td>
+        <td class="td1">branch</td>
+        <td class="td1">ブランチを削除</td>
+        <td class="td1">git branch -d ${ブランチ名}</td>
     </tr>
 
     <tr>
-        <td>branch</td>
-        <td>ブランチを削除(未マージのブランチを強制削除)</td>
-        <td>git branch -D ${ブランチ名}</td>
+        <td class="td1">branch</td>
+        <td class="td1">ブランチを削除(未マージのブランチを強制削除)</td>
+        <td class="td1">git branch -D ${ブランチ名}</td>
     </tr>
 
     <tr>
-        <td>branch</td>
-        <td>各ブランチにおける直近のコミットを調べる</td>
-        <td>git branch -v</td>
+        <td class="td1">branch</td>
+        <td class="td1">各ブランチにおける直近のコミットを調べる</td>
+        <td class="td1">git branch -v</td>
     </tr>
 
 
     <tr>
-        <td>branch</td>
-        <td>ブランチを新規作成</td>
-        <td>git branch ${ブランチ名}</td>
+        <td class="td1">branch</td>
+        <td class="td1">ブランチを新規作成</td>
+        <td class="td1">git branch ${ブランチ名}</td>
     </tr>
 
     <tr id="checkout">
-        <td>checkout</td>
-        <td>ブランチを作成して、そのブランチに切り替える</td>
-        <td>git checkout -b {ブランチ名}</td>
+        <td class="td1">checkout</td>
+        <td class="td1">ブランチを作成して、そのブランチに切り替える</td>
+        <td class="td1">git checkout -b {ブランチ名}</td>
     </tr>
 
     <tr>
-        <td>checkout</td>
-        <td>ブランチを切り替える</td>
-        <td>git checkout ${ブランチ名}</td>
+        <td class="td1">checkout</td>
+        <td class="td1">ブランチを切り替える</td>
+        <td class="td1">git checkout ${ブランチ名}</td>
     </tr>
 
     <tr id="clone">
-        <td>clone</td>
-        <td>リポジトリの複製（クローン）を作成する</td>
-        <td>git clone ${複製するリポジトリのURL} ${opt-ローカルのディレクトリ名}</td>
+        <td class="td1">clone</td>
+        <td class="td1">リポジトリの複製（クローン）を作成する</td>
+        <td class="td1">git clone ${複製するリポジトリのURL} ${opt-ローカルのディレクトリ名}</td>
     </tr>
 
     <tr id="commit">
-        <td>commit</td>
-        <td>コミットを実行する</td>
-        <td>git commit</td>
+        <td class="td1">commit</td>
+        <td class="td1">コミットを実行する</td>
+        <td class="td1">git commit</td>
     </tr>
 
     <tr>
-        <td>commit</td>
-        <td>直前のコミットを取り消してコミットする</td>
-        <td>git commit --amend</td>
+        <td class="td1">commit</td>
+        <td class="td1">直前のコミットを取り消してコミットする</td>
+        <td class="td1">git commit --amend</td>
     </tr>
 
     <tr>
-        <td>commit</td>
-        <td>オプションで変更されたファイルを自動検出してコミットする。</td>
-        <td>git commit -a</td>
+        <td class="td1">commit</td>
+        <td class="td1">オプションで変更されたファイルを自動検出してコミットする。</td>
+        <td class="td1">git commit -a</td>
     </tr>
 
     <tr>
-        <td>commit</td>
-        <td>コミットメッセージを再利用する</td>
-        <td>git commit -c some-commit</td>
+        <td class="td1">commit</td>
+        <td class="td1">コミットメッセージを再利用する</td>
+        <td class="td1">git commit -c some-commit</td>
     </tr>
 
     <tr>
-        <td>commit</td>
-        <td>オプションでコメントを引数として指定できる。</td>
-        <td>git commit -m</td>
+        <td class="td1">commit</td>
+        <td class="td1">オプションでコメントを引数として指定できる。</td>
+        <td class="td1">git commit -m</td>
     </tr>
 
     <tr>
-        <td>commit</td>
-        <td>変更点を表示しながらコミットメッセージを編集してコミットする</td>
-        <td>git commit -v</td>
+        <td class="td1">commit</td>
+        <td class="td1">変更点を表示しながらコミットメッセージを編集してコミットする</td>
+        <td class="td1">git commit -v</td>
     </tr>
 
     <tr>
-        <td>commit</td>
-        <td>指定したファイルのコミットを実行する</td>
-        <td>git commit ${コミットするファイル名}</td>
+        <td class="td1">commit</td>
+        <td class="td1">指定したファイルのコミットを実行する</td>
+        <td class="td1">git commit ${コミットするファイル名}</td>
     </tr>
 
     <tr id="diff">
-        <td>diff</td>
-        <td>作業ディレクトリと特定のコミットの変更点をdiffで表示する</td>
-        <td>git diff ${コミットID}</td>
+        <td class="td1">diff</td>
+        <td class="td1">作業ディレクトリと特定のコミットの変更点をdiffで表示する</td>
+        <td class="td1">git diff ${コミットID}</td>
     </tr>
 
     <tr>
-        <td>diff</td>
-        <td>作業ディレクトリとステージングの変更点をdiffで表示する</td>
-        <td>git diff ${ファイル名}</td>
+        <td class="td1">diff</td>
+        <td class="td1">作業ディレクトリとステージングの変更点をdiffで表示する</td>
+        <td class="td1">git diff ${ファイル名}</td>
     </tr>
 
     <tr id="fetch">
-        <td>fetch</td>
-        <td>リモートリポジトリから最新のコミットを取得する(pullと異なりマージは行わない)</td>
-        <td>git fetch ${リポジトリ名} 又は git fetch ${URL}</td>
+        <td class="td1">fetch</td>
+        <td class="td1">リモートリポジトリから最新のコミットを取得する(pullと異なりマージは行わない)</td>
+        <td class="td1">git fetch ${リポジトリ名} 又は git fetch ${URL}</td>
     </tr>
 
     <tr id="gitk">
-        <td>gitk</td>
-        <td>コミットグラフ・diff等のユーティリティ表示</td>
-        <td>gitk</td>
+        <td class="td1">gitk</td>
+        <td class="td1">コミットグラフ・diff等のユーティリティ表示</td>
+        <td class="td1">gitk</td>
     </tr>
 
     <tr>
-        <td>gitk --all</td>
-        <td>すべてのブランチを表示</td>
-        <td>gitk --all</td>
+        <td class="td1">gitk --all</td>
+        <td class="td1">すべてのブランチを表示</td>
+        <td class="td1">gitk --all</td>
     </tr>
 
     <tr>
-        <td>gitk --max-count=${number}</td>
-        <td>${number}で指定された数のコミットを表示</td>
-        <td>gitk --max-count=${number}</td>
+        <td class="td1">gitk --max-count=${number}</td>
+        <td class="td1">${number}で指定された数のコミットを表示</td>
+        <td class="td1">gitk --max-count=${number}</td>
     </tr>
 
     <tr>
-        <td>gitk --select-commit=${ref}</td>
-        <td>${ref}で指定されたコミットをカレント位置にして表示</td>
-        <td>gitk --select-commit=${ref}</td>
+        <td class="td1">gitk --select-commit=${ref}</td>
+        <td class="td1">${ref}で指定されたコミットをカレント位置にして表示</td>
+        <td class="td1">gitk --select-commit=${ref}</td>
     </tr>
 
     <tr>
-        <td>gitk --since=${date}</td>
-        <td>${date}で指定された日付以降のコミットを表示</td>
-        <td>gitk --since=${date}</td>
+        <td class="td1">gitk --since=${date}</td>
+        <td class="td1">${date}で指定された日付以降のコミットを表示</td>
+        <td class="td1">gitk --since=${date}</td>
     </tr>
 
     <tr>
-        <td>gitk --until=${date}</td>
-        <td>${date}で指定された日付以前のコミットを表示</td>
-        <td>gitk --until=${date}</td>
+        <td class="td1">gitk --until=${date}</td>
+        <td class="td1">${date}で指定された日付以前のコミットを表示</td>
+        <td class="td1">gitk --until=${date}</td>
     </tr>
 
     <tr>
-        <td>gitk -n ${number}</td>
-        <td>${number}で指定された数のコミットを表示</td>
-        <td>gitk -n ${number}</td>
+        <td class="td1">gitk -n ${number}</td>
+        <td class="td1">${number}で指定された数のコミットを表示</td>
+        <td class="td1">gitk -n ${number}</td>
     </tr>
 
     <tr id="help">
-        <td>help</td>
-        <td>コマンドの一覧を表示</td>
-        <td>git help</td>
+        <td class="td1">help</td>
+        <td class="td1">コマンドの一覧を表示</td>
+        <td class="td1">git help</td>
     </tr>
 
     <tr>
-        <td>help -a</td>
-        <td>利用可能なコマンドとパラメータの一覧を表示</td>
-        <td>git help -a</td>
+        <td class="td1">help -a</td>
+        <td class="td1">利用可能なコマンドとパラメータの一覧を表示</td>
+        <td class="td1">git help -a</td>
     </tr>
 
     <tr>
-        <td>help -i ${command}</td>
-        <td>${command}で指定されたコマンドの詳細ヘルプをinfo形式で表示</td>
-        <td>help -i ${command}</td>
+        <td class="td1">help -i ${command}</td>
+        <td class="td1">${command}で指定されたコマンドの詳細ヘルプをinfo形式で表示</td>
+        <td class="td1">help -i ${command}</td>
     </tr>
 
     <tr>
-        <td>help -m ${command}</td>
-        <td>${command}で指定されたコマンドの詳細ヘルプをman形式で表示</td>
-        <td>help -m ${command}</td>
+        <td class="td1">help -m ${command}</td>
+        <td class="td1">${command}で指定されたコマンドの詳細ヘルプをman形式で表示</td>
+        <td class="td1">help -m ${command}</td>
     </tr>
 
     <tr>
-        <td>help -w ${command}</td>
-        <td>${command}で指定されたコマンドの詳細ヘルプをhtml形式で表示</td>
-        <td>htlp -w ${command}</td>
+        <td class="td1">help -w ${command}</td>
+        <td class="td1">${command}で指定されたコマンドの詳細ヘルプをhtml形式で表示</td>
+        <td class="td1">htlp -w ${command}</td>
     </tr>
 
     <tr>
-        <td>help ${command}</td>
-        <td>${command}で指定されたコマンドの詳細ヘルプを表示</td>
-        <td>git help ${command}</td>
+        <td class="td1">help ${command}</td>
+        <td class="td1">${command}で指定されたコマンドの詳細ヘルプを表示</td>
+        <td class="td1">git help ${command}</td>
     </tr>
 
     <tr id="log">
-        <td>log</td>
-        <td>コミットログを表示する</td>
-        <td>git log</td>
+        <td class="td1">log</td>
+        <td class="td1">コミットログを表示する</td>
+        <td class="td1">git log</td>
     </tr>
 
     <tr>
-        <td>log</td>
-        <td>著者、コミッタを正規表現で検索してログを表示する</td>
-        <td>git log --committer=regexp</td>
+        <td class="td1">log</td>
+        <td class="td1">著者、コミッタを正規表現で検索してログを表示する</td>
+        <td class="td1">git log --committer=regexp</td>
     </tr>
 
     <tr>
-        <td>log</td>
-        <td>コミットメッセージを逆順にして表示する</td>
-        <td>git log --reverse</td>
+        <td class="td1">log</td>
+        <td class="td1">コミットメッセージを逆順にして表示する</td>
+        <td class="td1">git log --reverse</td>
     </tr>
 
     <tr>
-        <td>log</td>
-        <td>指定した時間に当てはまるログを表示する</td>
-        <td>git log --since=2011-2-6</td>
+        <td class="td1">log</td>
+        <td class="td1">指定した時間に当てはまるログを表示する</td>
+        <td class="td1">git log --since=2011-2-6</td>
     </tr>
 
     <tr>
-        <td>log</td>
-        <td>コミットログと変更の状態を表示する</td>
-        <td>git log --stat</td>
+        <td class="td1">log</td>
+        <td class="td1">コミットログと変更の状態を表示する</td>
+        <td class="td1">git log --stat</td>
     </tr>
 
     <tr>
-        <td>log</td>
-        <td>コミットログを指定した数だけ表示する</td>
-        <td>git log -n 5</td>
+        <td class="td1">log</td>
+        <td class="td1">コミットログを指定した数だけ表示する</td>
+        <td class="td1">git log -n 5</td>
     </tr>
 
     <tr>
-        <td>log</td>
-        <td>特定のファイルのコミットログを表示する</td>
-        <td>git log file.txt</td>
+        <td class="td1">log</td>
+        <td class="td1">特定のファイルのコミットログを表示する</td>
+        <td class="td1">git log file.txt</td>
     </tr>
 
     <tr id="merge">
-        <td>merge</td>
-        <td>現在のブランチに指定したブランチへのコミットをマージする</td>
-        <td>git merge ${ブランチ名}</td>
+        <td class="td1">merge</td>
+        <td class="td1">現在のブランチに指定したブランチへのコミットをマージする</td>
+        <td class="td1">git merge ${ブランチ名}</td>
     </tr>
 
     <tr id="mergetool">
-        <td>mergetool</td>
-        <td>コンフリクトをマージツールを利用して解決する<br/>操作は、対話式になっており、指示にしたがうことでマージツールを実行する。<br/>マージツールは実行時に、candicateに表示されているツールを利用することができる。<br/>表示されるツールはインストールされていない場合もあるので、必要に応じてインストールする<br/>コンフリクトを修正して、保存を行い、「git add xxx;git commit」することで、コンフリクト修正済みのファイルをコミットする</td>
-        <td>git mergetool<br/>git mergetool --tool=${ツール名}<br/></td>
+        <td class="td1">mergetool</td>
+        <td class="td1">コンフリクトをマージツールを利用して解決する<br/>操作は、対話式になっており、指示にしたがうことでマージツールを実行する。<br/>マージツールは実行時に、candicateに表示されているツールを利用することができる。<br/>表示されるツールはインストールされていない場合もあるので、必要に応じてインストールする<br/>コンフリクトを修正して、保存を行い、「git add xxx;git commit」することで、コンフリクト修正済みのファイルをコミットする</td>
+        <td class="td1">git mergetool<br/>git mergetool --tool=${ツール名}<br/></td>
     </tr>
 
     <tr id="mv">
-        <td>mv</td>
-        <td>ファイルを移動する</td>
-        <td>git mv ${from} ${to}</td>
+        <td class="td1">mv</td>
+        <td class="td1">ファイルを移動する</td>
+        <td class="td1">git mv ${from} ${to}</td>
     </tr>
 
     <tr id="pull">
-        <td>pull</td>
-        <td>ほかのリポジトリの変更点をローカルリポジトリにマージする</td>
-        <td>git pull ${変更点の取り込み元リポジトリ}</td>
+        <td class="td1">pull</td>
+        <td class="td1">ほかのリポジトリの変更点をローカルリポジトリにマージする</td>
+        <td class="td1">git pull ${変更点の取り込み元リポジトリ}</td>
     </tr>
 
     <tr id="push">
-        <td>push</td>
-        <td>指定のリポジトリに自分のリポジトリのデータを送信する。</td>
-        <td>git push ${送信先リポジトリ} ${送信元ブランチ}:${送信先ブランチ}</td>
+        <td class="td1">push</td>
+        <td class="td1">指定のリポジトリに自分のリポジトリのデータを送信する。</td>
+        <td class="td1">git push ${送信先リポジトリ} ${送信元ブランチ}:${送信先ブランチ}</td>
     </tr>
 
     <tr id="rebase">
-        <td>rebase</td>
-        <td>rebaseを元に戻す</td>
-        <td>git rebase --abort</td>
+        <td class="td1">rebase</td>
+        <td class="td1">rebaseを元に戻す</td>
+        <td class="td1">git rebase --abort</td>
     </tr>
 
     <tr>
-        <td>rebase</td>
-        <td>ブランチの派生元を変更</td>
-        <td>git rebase ${変更先ブランチ名}</td>
+        <td class="td1">rebase</td>
+        <td class="td1">ブランチの派生元を変更</td>
+        <td class="td1">git rebase ${変更先ブランチ名}</td>
     </tr>
 
     <tr id="reflog">
-        <td>reflog</td>
-        <td>HEADの変遷を確認することができる（コミットではなく、HEADがどう変遷していったかを確認できる。<br/>gcされる前であれば、必ず見つけることができる</td>
-        <td>git reflog</td>
+        <td class="td1">reflog</td>
+        <td class="td1">HEADの変遷を確認することができる（コミットではなく、HEADがどう変遷していったかを確認できる。<br/>gcされる前であれば、必ず見つけることができる</td>
+        <td class="td1">git reflog</td>
     </tr>
 
     <tr>
-        <td>reflog delete</td>
-        <td>不要なrefログを削除する</td>
-        <td>git reflog delete ${削除するreflog(reflogでみれる2カラム目の値を指定する)}</td>
+        <td class="td1">reflog delete</td>
+        <td class="td1">不要なrefログを削除する</td>
+        <td class="td1">git reflog delete ${削除するreflog(reflogでみれる2カラム目の値を指定する)}</td>
     </tr>
 
     <tr>
-        <td>reflog expire</td>
-        <td>ログが保持される期間に関する操作を行う</td>
-        <td>git reflog expire</td>
+        <td class="td1">reflog expire</td>
+        <td class="td1">ログが保持される期間に関する操作を行う</td>
+        <td class="td1">git reflog expire</td>
     </tr>
 
     <tr id="remote">
-        <td>remote</td>
-        <td>設定済みのリモートリポジトリのハンドル名を表示</td>
-        <td>git remote</td>
+        <td class="td1">remote</td>
+        <td class="td1">設定済みのリモートリポジトリのハンドル名を表示</td>
+        <td class="td1">git remote</td>
     </tr>
 
     <tr>
-        <td>remote</td>
-        <td>設定済みのリモートリポジトリのハンドル名とURLを表示</td>
-        <td>git remote -v</td>
+        <td class="td1">remote</td>
+        <td class="td1">設定済みのリモートリポジトリのハンドル名とURLを表示</td>
+        <td class="td1">git remote -v</td>
     </tr>
 
     <tr>
-        <td>remote</td>
-        <td>リモートリポジトリを追加</td>
-        <td>git remote add ${ハンドル名} ${URL}</td>
+        <td class="td1">remote</td>
+        <td class="td1">リモートリポジトリを追加</td>
+        <td class="td1">git remote add ${ハンドル名} ${URL}</td>
     </tr>
 
     <tr>
-        <td>remote</td>
-        <td>リモートリポジトリを削除</td>
-        <td>git remote rm ${ハンドル名}</td>
+        <td class="td1">remote</td>
+        <td class="td1">リモートリポジトリを削除</td>
+        <td class="td1">git remote rm ${ハンドル名}</td>
     </tr>
 
     <tr>
-        <td>remote</td>
-        <td>リモートリポジトリの詳細情報を表示</td>
-        <td>git remote show ${ハンドル名}</td>
+        <td class="td1">remote</td>
+        <td class="td1">リモートリポジトリの詳細情報を表示</td>
+        <td class="td1">git remote show ${ハンドル名}</td>
     </tr>
 
     <tr id="reset">
-        <td>reset</td>
-        <td>HEADの位置、インデックス、ワーキングツリーを3つ前の状態に戻す</td>
-        <td>git reset --hard HEAD^3</td>
+        <td class="td1">reset</td>
+        <td class="td1">HEADの位置、インデックス、ワーキングツリーを3つ前の状態に戻す</td>
+        <td class="td1">git reset --hard HEAD^3</td>
     </tr>
 
     <tr>
-        <td>reset</td>
-        <td>HEADの位置、インデックスを2つ前に戻す。ワーキングツリーには影響は与えない</td>
-        <td>git reset --mixed HEAD^^</td>
+        <td class="td1">reset</td>
+        <td class="td1">HEADの位置、インデックスを2つ前に戻す。ワーキングツリーには影響は与えない</td>
+        <td class="td1">git reset --mixed HEAD^^</td>
     </tr>
 
     <tr>
-        <td>reset</td>
-        <td>HEADの位置を1つ前に戻す。インデックスとワーキングツリーには影響は与えない</td>
-        <td>git reset --soft HEAD^</td>
+        <td class="td1">reset</td>
+        <td class="td1">HEADの位置を1つ前に戻す。インデックスとワーキングツリーには影響は与えない</td>
+        <td class="td1">git reset --soft HEAD^</td>
     </tr>
 
     <tr id="revert">
-        <td>revert</td>
-        <td>特定のコミットを取り消す（ステージングには上がるがコミットは行わない）</td>
-        <td>git revert -n ${コミットID}</td>
+        <td class="td1">revert</td>
+        <td class="td1">特定のコミットを取り消す（ステージングには上がるがコミットは行わない）</td>
+        <td class="td1">git revert -n ${コミットID}</td>
     </tr>
 
     <tr>
-        <td>revert</td>
-        <td>特定のコミットを取り消す（自動的にコミットを行う）</td>
-        <td>git revert ${コミットID}</td>
+        <td class="td1">revert</td>
+        <td class="td1">特定のコミットを取り消す（自動的にコミットを行う）</td>
+        <td class="td1">git revert ${コミットID}</td>
     </tr>
 
     <tr id="rm">
-        <td>rm</td>
-        <td>指定したファイルを、ツリーから削除する</td>
-        <td>git rm ${削除するファイル名}</td>
+        <td class="td1">rm</td>
+        <td class="td1">指定したファイルを、ツリーから削除する</td>
+        <td class="td1">git rm ${削除するファイル名}</td>
     </tr>
 
     <tr id="show">
-        <td>show</td>
-        <td>最新のコミットのメッセージと変更点を表示する</td>
-        <td>git show</td>
+        <td class="td1">show</td>
+        <td class="td1">最新のコミットのメッセージと変更点を表示する</td>
+        <td class="td1">git show</td>
     </tr>
 
     <tr>
-        <td>show</td>
-        <td>指定したコミットのメッセージと変更点を表示する</td>
-        <td>git show ${コミットID}</td>
+        <td class="td1">show</td>
+        <td class="td1">指定したコミットのメッセージと変更点を表示する</td>
+        <td class="td1">git show ${コミットID}</td>
     </tr>
 
     <tr id="stash">
-        <td>stash</td>
-        <td>ステージされていない変更を一時的に保存する<br/>行うごとに蓄積していく</td>
-        <td>git stash<br/>git stash save ${メッセージ}</td>
+        <td class="td1">stash</td>
+        <td class="td1">ステージされていない変更を一時的に保存する<br/>行うごとに蓄積していく</td>
+        <td class="td1">git stash<br/>git stash save ${メッセージ}</td>
     </tr>
 
     <tr>
-        <td>stash clear</td>
-        <td>保存した変更をすべて捨てる</td>
-        <td>git stash clear</td>
+        <td class="td1">stash clear</td>
+        <td class="td1">保存した変更をすべて捨てる</td>
+        <td class="td1">git stash clear</td>
     </tr>
 
     <tr>
-        <td>stash drop</td>
-        <td>一番最近に保存した変更を捨てる</td>
-        <td>git stash drop</td>
+        <td class="td1">stash drop</td>
+        <td class="td1">一番最近に保存した変更を捨てる</td>
+        <td class="td1">git stash drop</td>
     </tr>
 
     <tr>
-        <td>stash list</td>
-        <td>保存したリストを確認する</td>
-        <td>git stash list</td>
+        <td class="td1">stash list</td>
+        <td class="td1">保存したリストを確認する</td>
+        <td class="td1">git stash list</td>
     </tr>
 
     <tr>
-        <td>stash pop</td>
-        <td>一番最近に保存した変更を元に戻す</td>
-        <td>git stash pop</td>
+        <td class="td1">stash pop</td>
+        <td class="td1">一番最近に保存した変更を元に戻す</td>
+        <td class="td1">git stash pop</td>
     </tr>
 
     <tr id="status">
-        <td>status</td>
-        <td>変更が加えられたファイルを表示する</td>
-        <td>git status</td>
+        <td class="td1">status</td>
+        <td class="td1">変更が加えられたファイルを表示する</td>
+        <td class="td1">git status</td>
     </tr>
 
     <tr>
-        <td>status</td>
-        <td>変更が加えられたファイルを表示する（短縮形で表示）</td>
-        <td>git status -s</td>
+        <td class="td1">status</td>
+        <td class="td1">変更が加えられたファイルを表示する（短縮形で表示）</td>
+        <td class="td1">git status -s</td>
     </tr>
 
     <tr id="tag">
-        <td>tag</td>
-        <td>タグ一覧を表示する</td>
-        <td>git tag</td>
+        <td class="td1">tag</td>
+        <td class="td1">タグ一覧を表示する</td>
+        <td class="td1">git tag</td>
     </tr>
 
     <tr>
-        <td>tag</td>
-        <td>HEAD にアノテーションつきのタグをつける</td>
-        <td>git tag -a ${タグ名} -m "annotation"</td>
+        <td class="td1">tag</td>
+        <td class="td1">HEAD にアノテーションつきのタグをつける</td>
+        <td class="td1">git tag -a ${タグ名} -m "annotation"</td>
     </tr>
 
     <tr>
-        <td>tag</td>
-        <td>タグを削除する</td>
-        <td>git tag -d ${タグ名}</td>
+        <td class="td1">tag</td>
+        <td class="td1">タグを削除する</td>
+        <td class="td1">git tag -d ${タグ名}</td>
     </tr>
 
     <tr>
-        <td>tag</td>
-        <td>タグをパターンで検索して表示する</td>
-        <td>git tag -l ${タグ名}</td>
+        <td class="td1">tag</td>
+        <td class="td1">タグをパターンで検索して表示する</td>
+        <td class="td1">git tag -l ${タグ名}</td>
     </tr>
 
     <tr>
-        <td>tag</td>
-        <td>タグのリストとアノテーションを表示する</td>
-        <td>git tag -n${表示行数} -l</td>
+        <td class="td1">tag</td>
+        <td class="td1">タグのリストとアノテーションを表示する</td>
+        <td class="td1">git tag -n${表示行数} -l</td>
     </tr>
 
     <tr>
-        <td>tag</td>
-        <td>HEAD にアノテーションなしのタグをつける</td>
-        <td>git tag ${タグ名}</td>
+        <td class="td1">tag</td>
+        <td class="td1">HEAD にアノテーションなしのタグをつける</td>
+        <td class="td1">git tag ${タグ名}</td>
     </tr>
 
     <tr>
-        <td>tag</td>
-        <td>特定のコミットにタグをつける</td>
-        <td>git tag ${タグ名} some-commit</td>
+        <td class="td1">tag</td>
+        <td class="td1">特定のコミットにタグをつける</td>
+        <td class="td1">git tag ${タグ名} some-commit</td>
     </tr>
 
 </table>
